@@ -9,9 +9,33 @@ package Reto_poligono;
 public class poligono {
 
 	public static void main(String[] args) {
+		Calculadora nu = new Calculadora();
+		
 		
 
 	}
-	
+	public class Calculadora implements area{
+
+		public double triangulo(double base, double altura) {
+			// TODO Auto-generated method stub
+			double resultado =(base*altura)/2;
+			System.out.println("El resultado del area del triangulo es: " + resultado);
+			return resultado;
+		}
+
+		public double cuadrado(double l1) {
+			double resultado = l1 * 2;
+			System.out.println("El resultado del area del cuadrado es: " + resultado);
+			return resultado;
+		}
+
+		public double rectangulo(double l1, double l2) {
+			// TODO Auto-generated method stub
+			double resultado = l1 * l2;
+			System.out.println("El resultado del area del Rectangulo es: " + resultado);
+			return resultado;
+		}
+		
+	}
 
 }
