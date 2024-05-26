@@ -13,9 +13,5 @@ public class poligono {
 
 	}
 	
-	
-	private void calculo() {
-		
-	}
 
 }
