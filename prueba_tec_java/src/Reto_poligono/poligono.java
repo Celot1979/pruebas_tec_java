@@ -13,7 +13,11 @@ public class poligono {
 	
 	public static void main(String[] args) {
 		
+		
+		
 	}
-	
-	
+
+
+
+
 }
