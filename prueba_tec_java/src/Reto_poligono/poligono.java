@@ -12,12 +12,13 @@ import java.util.Scanner;
 public class poligono {
 	
 	public static void main(String[] args) {
-		
-		
+		Triangulo t = new Triangulo(1, 2);
+		t.area();
+		Rectangulo r = new Rectangulo(2, 2);
+		r.area();
+		Cuadrado c = new Cuadrado(3);
+		c.area();
 		
 	}
-
-
-
-
+	
 }
