@@ -1,4 +1,7 @@
 package Reto_poligono;
+
+import java.util.Scanner;
+
 /*
  * Crea una única función (importante que sólo sea una) que sea capaz
  * de calcular y retornar el área de un polígono.
@@ -7,15 +10,10 @@ package Reto_poligono;
  * - Imprime el cálculo del área de un polígono de cada tipo.
  */
 public class poligono {
-
+	
 	public static void main(String[] args) {
 		
-
 	}
 	
 	
-	private void calculo() {
-		
-	}
-
 }
