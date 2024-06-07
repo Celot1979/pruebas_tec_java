@@ -60,6 +60,7 @@ public class Prueba_tec_2 {
 		cli1.setNombre("Daniel");
 		cli1.setApellido("Gil");
 		cli1.getListaTickets().add(ticket1);
+		System.out.print("Hola");
 
 	}
 	
