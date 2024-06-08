@@ -6,71 +6,44 @@ import java.util.Scanner;
 
 class Crear_Tareas {
     public static void main(String[] args) {
-        ArrayList<String> tasks = new ArrayList<>();
         System.out.println("APP PARA GESTIONAR TUS TAREAS");
-        Scanner scanner = new Scanner(System.in);
 
 
-        boolean flag = true;
-        while (flag = true) {
+        int salir = 0;
+        while (salir == 0) {
+            Scanner teclado = new Scanner(System.in);
+            System.out.println("MENU:" + "\n" + "1. Crear Tarea" + "\n" + "2. Imprimir tarea" + "\n"+ "3. Eliminar Tarea" + "\n"+  "4.Salir");
+            int opciones = teclado.nextInt();
 
-            /*System.out.println("MENU:" + "\n" + "1. Crear Tarea" + "\n" + "2. Imprimir tarea" + "\n"+ "3. Eliminar Tarea" + "\n"+  "4.Salir");
-            int option = keyborard.nextInt();
-            keyborard.nextLine();*/
-            // Mostrar el menú de opciones
-            System.out.println("Seleccione una opción:" + "\n");
-            System.out.println("1. Agregar una tarea");
-            System.out.println("2. Ver todas las tareas");
-            System.out.println("3. Borrar una tarea");
-            System.out.println("4. Salir" + "\n");
-            System.out.print("Opción: ");
-            int option = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer del scanner
+            if (opciones == 1) {
+                Scanner Crear_Tarea = new Scanner(System.in);
+                System.out.println("\n" + "Ingrese el nombre del tarea: ");
+                String nombre = Crear_Tarea.nextLine();
+                tareas=new ArrayList<String>();
+                tareas.add(nombre);
+            } else if (opciones == 2) {
+                System.out.println("\n" +"Aquí están todas sus tareas:  ");
+                for(String tarea:tareas){
+                    System.out.println(tarea);
+                }
 
-            switch (option) {
-                case 1:
-                    // Agregar una tarea
-                    System.out.println("Ingrese una tarea: ");
-                    String task = scanner.nextLine();
-                    tasks.add(task);
-                    System.out.println("Tarea agregada." + "\n" + "\n");
-                    break;
-                case 2:
-                    // Ver todas las tareas
-                    System.out.println("\n" + "\n" + "Las tareas ingresadas son:");
-                    for (int i = 0; i < tasks.size(); i++) {
-                        System.out.println((i + 1) + ". " + tasks.get(i));
-                    }
-                    System.out.println("\n" + "\n");
-                    break;
-                case 3:
-                    // Borrar una tarea
-                    System.out.println("\n" + "\n" +"Ingrese el número de la tarea a borrar: ");
-                    int taskNumber = scanner.nextInt();
-                    scanner.nextLine(); // Limpiar el buffer del scanner
-
-                    if (taskNumber > 0 && taskNumber <= tasks.size()) {
-                        tasks.remove(taskNumber - 1);
-                        System.out.println("Tarea borrada.");
-                    } else {
-                        System.out.println("Número de tarea inválido.");
-                    }
-                    break;
-                case 4:
-                    // Salir
-                    System.out.println("\n" + "\n" +"Saliendo del programa...");
-                    flag= false;
-                    scanner.close();
-                    return;
-                default:
-                    System.out.println("Opción inválida. Intente de nuevo.");
-                    break;
-
+            } else if (opciones == 3) {
+                System.out.println("\n" +"Eliminar Tarea");
+                teclado = new Scanner(System.in);
+                System.out.println("Ingrese el número de la terea que quiere borrar : ");
+                int numero = teclado.nextInt();
+                tareas.remove(numero);
+            }else if (opciones == 4) {
+                System.out.println("Esperamos volver a verle pronto");
+                salir = 1;
 
             }
 
-
         }
 
+
+
     }
+    static List<String> tareas ;
+
 }
