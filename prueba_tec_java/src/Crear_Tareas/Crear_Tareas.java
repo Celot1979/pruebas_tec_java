@@ -11,8 +11,8 @@ class Crear_Tareas {
         Scanner scanner = new Scanner(System.in);
 
 
-        int exit = 0;
-        while (exit == 0) {
+        boolean flag = true;
+        while (flag = true) {
 
             /*System.out.println("MENU:" + "\n" + "1. Crear Tarea" + "\n" + "2. Imprimir tarea" + "\n"+ "3. Eliminar Tarea" + "\n"+  "4.Salir");
             int option = keyborard.nextInt();
@@ -59,6 +59,7 @@ class Crear_Tareas {
                 case 4:
                     // Salir
                     System.out.println("\n" + "\n" +"Saliendo del programa...");
+                    flag= false;
                     scanner.close();
                     return;
                 default:
