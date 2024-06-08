@@ -6,44 +6,58 @@ import java.util.Scanner;
 
 class Crear_Tareas {
     public static void main(String[] args) {
-        System.out.println("APP PARA GESTIONAR TUS TAREAS");
+        // Create an ArrayList to store the tasks
+        ArrayList<String> tasks = new ArrayList<>();
 
+        //Create a Scanner to read user input
+        Scanner scanner = new Scanner(System.in);
 
-        int salir = 0;
-        while (salir == 0) {
-            Scanner teclado = new Scanner(System.in);
-            System.out.println("MENU:" + "\n" + "1. Crear Tarea" + "\n" + "2. Imprimir tarea" + "\n"+ "3. Eliminar Tarea" + "\n"+  "4.Salir");
-            int opciones = teclado.nextInt();
+        while (true) {
+            // Show options menu
+            System.out.println("\n"+ "MENU:" + "\n" + "\n"+ "1. Create Task" + "\n" + "2. Print assignment" + "\n"+ "3. Delete Task" + "\n"+ "4.Exit");
+            System.out.print("\n"+"Option: ");
+            int option = scanner.nextInt();
+            scanner.nextLine(); // Clean the scanner buffer
 
-            if (opciones == 1) {
-                Scanner Crear_Tarea = new Scanner(System.in);
-                System.out.println("\n" + "Ingrese el nombre del tarea: ");
-                String nombre = Crear_Tarea.nextLine();
-                tareas=new ArrayList<String>();
-                tareas.add(nombre);
-            } else if (opciones == 2) {
-                System.out.println("\n" +"Aquí están todas sus tareas:  ");
-                for(String tarea:tareas){
-                    System.out.println(tarea);
-                }
+            switch (option) {
+                case 1:
+                    // Add a task
+                    System.out.println("\n"+"Enter a task: ");
+                    String task = scanner.nextLine();
+                    tasks.add(task);
+                    System.out.println("\n"+"Added task.");
+                    break;
+                case 2:
+                    // See all tasks
+                    System.out.println("\n"+"The tasks entered are:");
+                    for (int i = 0; i < tasks.size(); i++) {
+                        System.out.println((i + 1) + ". " + tasks.get(i));
+                    }
+                    break;
+                case 3:
+                    // Delete a task
+                    System.out.println("\n"+"Enter the number of the task to delete: ");
+                    int taskNumber = scanner.nextInt();
+                    scanner.nextLine(); // Clear the scanner buffer
 
-            } else if (opciones == 3) {
-                System.out.println("\n" +"Eliminar Tarea");
-                teclado = new Scanner(System.in);
-                System.out.println("Ingrese el número de la terea que quiere borrar : ");
-                int numero = teclado.nextInt();
-                tareas.remove(numero);
-            }else if (opciones == 4) {
-                System.out.println("Esperamos volver a verle pronto");
-                salir = 1;
-
+                    if (taskNumber > 0 && taskNumber <= tasks.size()) {
+                        tasks.remove(taskNumber - 1);
+                        System.out.println("\n"+"Task deleted.");
+                    } else {
+                        System.out.println("Invalid task number.");
+                    }
+                    break;
+                case 4:
+                    // exit
+                    System.out.println("\n"+"Leaving the program...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid option. Try again.");
+                    break;
             }
-
         }
-
-
-
     }
-    static List<String> tareas ;
+
 
 }
