@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
-import static prueba_tec_java.src.Viernes_13.Viernes.esViernes13;
-
 public class Viernes_Gra {
     public static void main(String[] args){
         // Crear el JFrame principal
