@@ -100,7 +100,5 @@ public class Viernes_Gra {
         frame.pack();
         frame.setVisible(true);
     }
-    private  JLabel label1,label2;
-    private JTextField textField1, textField2;
-    private JButton button1;
+
 }
