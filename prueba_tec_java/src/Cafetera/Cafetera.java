@@ -1,13 +1,15 @@
 package prueba_tec_java.src.Cafetera;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Cafetera {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-       // System.out.println("B  I  E  N  V  E  N  I  D  O " + "\n" + "Que bebida desea tomar : ");
-       // System.out.print("M  E  N  Ú " + "\n" + "1. CAFÉ EXPRESSO "+ "\n" +"2. CAFÉ LARGO"+ "\n" +"3. CAFÉ AMERICANO"+ "\n" +"4. CAFÉ CON LECHE"+ "\n" +"5. CEFÉ DESCAFEINADO");
-       // int opcion = entrada.nextInt();
+         Marco marco = new Marco();
+
+
+
+        /* Scanner entrada = new Scanner(System.in);
         boolean flag = false;
         Controlador eleccion = new Controlador();
         while (flag == false) {
@@ -31,10 +33,11 @@ public class Cafetera {
                 flag=true;
             }
 
-            }
+            }*/
         }
+    // Propiedades
 
 
-    private static int opcion;
+    //private static int opcion;
 
 }
